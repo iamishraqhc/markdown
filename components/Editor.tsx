@@ -27,26 +27,13 @@ const Editor = ({ onChange, initialValue }: EditorProps) => {
   const cleanHtml = DOMPurify.sanitize(html);
 
   return (
-    <div className="grid grid-cols-2 gap-4">
+    <div className="grid grid-cols-2 gap-4 flex">
       <div>
-        <label htmlFor="editor" className="block font-medium text-gray-700 mb-2">
-          Editor
-        </label>
         <textarea
           id="editor"
           className="w-full h-80 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
           value={value}
           onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="preview" className="block font-medium text-gray-700 mb-2">
-          Preview
-        </label>
-        <div
-          id="preview"
-          className="prose prose-indigo"
-          dangerouslySetInnerHTML={{ __html: cleanHtml }}
         />
       </div>
     </div>
